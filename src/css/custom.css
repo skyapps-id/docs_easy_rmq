@@ -1,0 +1,18 @@
+:root {
+  --ifm-color-scheme: dark {
+    --docusaurus-admonition-color: 120, 150, 80;
+    --docusaurus-admonition-bg: rgba(120, 150, 80, 0.2);
+  }
+  --docusaurus-admonition-color: 120, 150, 80;
+  --docusaurus-admonition-bg: rgba(120, 150, 80, 0.2);
+}
+  
+.docs-version-current {
+  --docusaurus-admonition-color: 190, 120, 80;
+  --docusaurus-admonition-bg: rgba(190, 120, 80, 0.2);
+}
+
+.docs-version-beta {
+  --docusaurus-admonition-color: 40, 120, 190;
+  --docusaurus-admonition-bg: rgba(40, 120, 190, 0.2);
+}
