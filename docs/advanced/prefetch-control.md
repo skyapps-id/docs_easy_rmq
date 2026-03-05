@@ -393,6 +393,6 @@ fn handle_order(data: Vec<u8>) -> easy_rmq::Result<()> {
 
 ## What's Next
 
-- [Parallel Processing](../parallel-processing) - Configure worker concurrency
-- [Retry Mechanism](../retry-mechanism) - Handle failed messages
-- [Single Active Consumer](../single-active-consumer) - Ensure message ordering
+- [Parallel Processing](/docs/advanced/parallel-processing) - Configure worker concurrency
+- [Retry Mechanism](/docs/advanced/retry-mechanism) - Handle failed messages
+- [Single Active Consumer](/docs/advanced/single-active-consumer) - Ensure message ordering

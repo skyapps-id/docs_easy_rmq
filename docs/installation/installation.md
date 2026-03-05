@@ -338,6 +338,6 @@ async fn health_check(client: &AmqpClient) -> bool {
 
 ## What's Next
 
-- [Basic Features](../basic/publisher) - Learn about publishers
-- [Basic Features](../basic/subscriber) - Learn about subscribers
-- [Advanced Features](../advanced/retry-mechanism) - Explore retry and error handling
+- [Basic Features](/docs/basic/publisher) - Learn about publishers
+- [Basic Features](/docs/basic/subscriber) - Learn about subscribers
+- [Advanced Features](/docs/advanced/retry-mechanism) - Explore retry and error handling

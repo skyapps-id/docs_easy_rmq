@@ -419,6 +419,6 @@ fn logging(_payload: &[u8], result: &Result<()>) -> easy_rmq::Result<()> {
 
 ## What's Next
 
-- [Prefetch Control](../prefetch-control) - Optimize message buffering
-- [Retry Mechanism](../retry-mechanism) - Handle failed messages
-- [Single Active Consumer](../single-active-consumer) - Ensure message ordering
+- [Prefetch Control](/docs/advanced/prefetch-control) - Optimize message buffering
+- [Retry Mechanism](/docs/advanced/retry-mechanism) - Handle failed messages
+- [Single Active Consumer](/docs/advanced/single-active-consumer) - Ensure message ordering

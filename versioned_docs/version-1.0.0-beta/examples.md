@@ -430,4 +430,4 @@ async fn test_publish_and_subscribe() {
 
 - [Publisher Guide](../basic/publisher) - Learn about publishers
 - [Subscriber Guide](../basic/subscriber) - Learn about subscribers
-- [Advanced Features](../advanced/retry-mechanism) - Explore retry and concurrency
+- [Advanced Features](/docs/1.0.0-beta/advanced/retry-mechanism) - Explore retry and concurrency

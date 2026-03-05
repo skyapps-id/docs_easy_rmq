@@ -419,6 +419,6 @@ fn dead_letter(payload: &[u8], result: &Result<()>) -> Result<()> {
 
 ## What's Next
 
-- [Distributed Tracing](../distributed-tracing) - Advanced tracing patterns
-- [Retry Mechanism](../retry-mechanism) - Handle failed messages
-- [Prefetch Control](../prefetch-control) - Optimize message buffering
+- [Distributed Tracing](/docs/advanced/distributed-tracing) - Advanced tracing patterns
+- [Retry Mechanism](/docs/advanced/retry-mechanism) - Handle failed messages
+- [Prefetch Control](/docs/advanced/prefetch-control) - Optimize message buffering

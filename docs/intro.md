@@ -142,10 +142,10 @@ Strong error handling with `thiserror` for compile-time guarantees.
 
 ## What's Next
 
-- [Examples](examples) - Complete working examples
-- [Installation & Configuration](installation) - Setup and configure Easy RMQ
-- [Basic Features](basic) - Learn about publishers and subscribers
-- [Advanced Features](advanced) - Explore retry, concurrency, and more
+- [Examples](/docs/examples) - Complete working examples
+- [Installation & Configuration](/docs/installation) - Setup and configure Easy RMQ
+- [Basic Features](/docs/basic/) - Learn about publishers and subscribers
+- [Advanced Features](/docs/advanced/) - Explore retry, concurrency, and more
 
 ## Links
 

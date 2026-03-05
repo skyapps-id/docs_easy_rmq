@@ -285,6 +285,6 @@ fn handle_order(data: Vec<u8>) -> easy_rmq::Result<()> {
 
 ## What's Next
 
-- [Prefetch Control](../prefetch-control) - Control message buffering
-- [Parallel Processing](../parallel-processing) - Configure worker concurrency
-- [Single Active Consumer](../single-active-consumer) - Ensure message ordering
+- [Prefetch Control](/docs/1.0.0-beta/advanced/prefetch-control) - Control message buffering
+- [Parallel Processing](/docs/1.0.0-beta/advanced/parallel-processing) - Configure worker concurrency
+- [Single Active Consumer](/docs/1.0.0-beta/advanced/single-active-consumer) - Ensure message ordering
