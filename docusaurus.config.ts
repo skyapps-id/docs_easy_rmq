@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Easy RMQ',
-  tagline: 'A Rust AMQP library with connection pool, publisher, subscriber, and dependency injection support',
+  tagline: 'Modern AMQP libraries for Rust and Go with connection pool, publisher, subscriber, and dependency injection support',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -22,8 +22,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'skyapps-id', // Usually your GitHub org/user name.
-  projectName: 'easy_rmq', // Usually your repo name.
+  organizationName: 'easyrmq', // Usually your GitHub org/user name.
+  projectName: 'easy-rmq', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   markdown: {
@@ -49,7 +49,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/skyapps-id/easy_rmq/tree/main/docs',
+            'https://github.com/easyrmq/my-docs/tree/main/docs',
           // Versioning configuration
           includeCurrentVersion: true,
           lastVersion: '1.0.0',
@@ -92,6 +92,21 @@ const config: Config = {
           label: 'Docs',
         },
         {
+          type: 'dropdown',
+          label: 'Languages',
+          position: 'left',
+          items: [
+            {
+              label: 'Rust →',
+              href: 'https://github.com/skyapps-id/easy-rmq-rs',
+            },
+            {
+              label: 'Go →',
+              href: 'https://github.com/skyapps-id/easy-rmq-go',
+            },
+          ],
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsBefore: [],
@@ -120,12 +135,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub Issues',
-              href: 'https://github.com/skyapps-id/easy_rmq/issues',
+              label: 'Rust Issues',
+              href: 'https://github.com/easyrmq/easy-rmq-rs/issues',
             },
             {
-              label: 'GitHub Discussions',
-              href: 'https://github.com/skyapps-id/easy_rmq/discussions',
+              label: 'Go Issues',
+              href: 'https://github.com/easyrmq/easy-rmq-go/issues',
+            },
+            {
+              label: 'Documentation Issues',
+              href: 'https://github.com/easyrmq/my-docs/issues',
             },
           ],
         },
@@ -133,8 +152,12 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/skyapps-id/easy_rmq',
+              label: 'Rust GitHub',
+              href: 'https://github.com/easyrmq/easy-rmq-rs',
+            },
+            {
+              label: 'Go GitHub',
+              href: 'https://github.com/easyrmq/easy-rmq-go',
             },
           ],
         },
