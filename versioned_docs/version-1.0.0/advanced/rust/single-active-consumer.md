@@ -420,6 +420,6 @@ fn log_consumer_state() {
 
 ## What's Next
 
-- [Prefetch Control](/docs/1.0.0/advanced/prefetch-control) - Understanding QoS
-- [Parallel Processing](/docs/1.0.0/advanced/parallel-processing) - When NOT to use SAC
-- [Retry Mechanism](/docs/1.0.0/advanced/retry-mechanism) - Handle failed messages
+- [Prefetch Control](/docs/advanced/prefetch-control) - Understanding QoS
+- [Parallel Processing](/docs/advanced/parallel-processing) - When NOT to use SAC
+- [Retry Mechanism](/docs/advanced/retry-mechanism) - Handle failed messages

@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Installation
+# Rust Installation
 
-Learn how to install and configure Easy RMQ in your Rust project.
+Complete guide to install and configure Easy RMQ for Rust.
 
 ## Requirements
 
@@ -22,105 +22,24 @@ Add Easy RMQ to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-easy_rmq = { git = "https://github.com/skyapps-id/easy_rmq" }
+easy-rmq-rs = { git = "https://github.com/skyapps-id/easy-rmq-rs" }
 tokio = { version = "1", features = ["full"] }
 ```
 
 ### Using Cargo Edit
 
 ```bash
-cargo add easy_rmq --git https://github.com/skyapps-id/easy_rmq
+cargo add easy-rmq-rs --git https://github.com/skyapps-id/easy-rmq-rs
 ```
-
-## RabbitMQ Setup
-
-### Option 1: Docker (Recommended)
-
-#### Using Docker CLI
-
-```bash
-docker run -d --name rabbitmq \
-  -p 5672:5672 \
-  -p 15672:15672 \
-  rabbitmq:3-management
-```
-
-#### Using Docker Compose
-
-Create `docker-compose.yml`:
-
-```yaml
-version: '3.8'
-
-services:
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    ports:
-      - "5672:5672"   # AMQP port
-      - "15672:15672" # Management UI
-    environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: password
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    restart: unless-stopped
-
-volumes:
-  rabbitmq_data:
-```
-
-Start RabbitMQ:
-
-```bash
-docker-compose up -d
-```
-
-### Option 2: Local Installation
-
-#### macOS
-
-```bash
-brew install rabbitmq
-brew services start rabbitmq
-```
-
-#### Ubuntu/Debian
-
-```bash
-sudo apt-get update
-sudo apt-get install rabbitmq-server
-sudo systemctl start rabbitmq-server
-```
-
-#### Windows
-
-Download and install from [RabbitMQ official website](https://www.rabbitmq.com/download.html)
-
-### Verify RabbitMQ is Running
-
-Check if RabbitMQ is running:
-
-```bash
-# Check if port 5672 is open
-netstat -an | grep 5672
-
-# Or use curl to check management API
-curl http://localhost:15672/api/overview
-```
-
-Access the Management UI at: http://localhost:15672
-- Default username: `guest` (or `admin` if using Docker Compose)
-- Default password: `guest` (or `password` if using Docker Compose)
 
 ## Configuration
 
-### Basic Configuration
+### Basic Setup
 
 Create a client with connection string and pool size:
 
 ```rust
-use easy_rmq::AmqpClient;
+use easy_rmq_rs::AmqpClient;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -179,7 +98,7 @@ let client = AmqpClient::new("amqp://guest:guest@localhost:5672".to_string(), 50
 - **Production**: 10-50 connections (based on workload)
 - **High Throughput**: 50-100 connections
 
-### Environment Variables
+## Environment Variables
 
 Store configuration in environment variables:
 
@@ -222,44 +141,93 @@ dotenv = "0.15"
 dotenv::dotenv().ok();
 ```
 
-### TLS/SSL Configuration
+## RabbitMQ Setup
 
-For secure connections with TLS:
+### Docker (Recommended)
 
-```rust
-let client = AmqpClient::new(
-    "amqps://admin:password@rabbitmq.example.com:5671".to_string(),
-    10
-)?;
+#### Using Docker CLI
+
+```bash
+docker run -d --name rabbitmq \
+  -p 5672:5672 \
+  -p 15672:15672 \
+  rabbitmq:3-management
 ```
 
-**Note**: Ensure your RabbitMQ server has TLS enabled and certificates properly configured.
+#### Using Docker Compose
 
-### Connection Properties
+Create `docker-compose.yml`:
 
-Configure additional connection properties:
+```yaml
+version: '3.8'
 
-```rust
-use easy_rmq::AmqpClient;
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
 
-let client = AmqpClient::new(
-    "amqp://guest:guest@localhost:5672".to_string(),
-    10
-)?;
-
-// Access channel pool
-let pool = client.channel_pool();
-
-// Connection is automatically managed
-// No need to manually handle connection lifecycle
+volumes:
+  rabbitmq_data:
 ```
 
-## Testing Configuration
+Start RabbitMQ:
+
+```bash
+docker-compose up -d
+```
+
+### Local Installation
+
+#### macOS
+
+```bash
+brew install rabbitmq
+brew services start rabbitmq
+```
+
+#### Ubuntu/Debian
+
+```bash
+sudo apt-get update
+sudo apt-get install rabbitmq-server
+sudo systemctl start rabbitmq-server
+```
+
+#### Windows
+
+Download and install from [RabbitMQ official website](https://www.rabbitmq.com/download.html)
+
+## Verify Installation
+
+Check if RabbitMQ is running:
+
+```bash
+# Check if port 5672 is open
+netstat -an | grep 5672
+
+# Or use curl to check management API
+curl http://localhost:15672/api/overview
+```
+
+Access the Management UI at: http://localhost:15672
+- Default username: `guest` (or `admin` if using Docker Compose)
+- Default password: `guest` (or `password` if using Docker Compose)
+
+## Testing
 
 ### Test Connection
 
 ```rust
-use easy_rmq::AmqpClient;
+use easy_rmq_rs::AmqpClient;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -274,7 +242,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     println!("✅ Connection successful!");
-    
+
     Ok(())
 }
 ```
@@ -295,9 +263,7 @@ async fn health_check(client: &AmqpClient) -> bool {
 
 ## Troubleshooting
 
-### Common Issues
-
-#### Connection Refused
+### Connection Refused
 
 **Problem**: `Connection refused` error
 
@@ -307,7 +273,7 @@ async fn health_check(client: &AmqpClient) -> bool {
 3. Verify connection string format
 4. Check firewall settings
 
-#### Authentication Failed
+### Authentication Failed
 
 **Problem**: `Authentication failed` error
 
@@ -316,28 +282,8 @@ async fn health_check(client: &AmqpClient) -> bool {
 2. Check user permissions in RabbitMQ Management UI
 3. Ensure user has access to the virtual host
 
-#### Timeout
-
-**Problem**: Connection timeout
-
-**Solutions**:
-1. Check network connectivity
-2. Verify correct host and port
-3. Increase timeout if needed
-4. Check RabbitMQ server logs
-
-## Best Practices
-
-1. **Use Environment Variables**: Store connection strings in environment variables
-2. **Connection Pooling**: Use appropriate pool size for your workload
-3. **Error Handling**: Always handle connection errors appropriately
-4. **Graceful Shutdown**: Implement graceful shutdown for clean connection closure
-5. **Monitoring**: Monitor connection health and pool utilization
-6. **Security**: Use strong passwords and TLS in production
-7. **Resource Management**: Set appropriate channel and connection limits
-
 ## What's Next
 
-- [Basic Features](../basic/publisher) - Learn about publishers
-- [Basic Features](../basic/subscriber) - Learn about subscribers
-- [Advanced Features](/docs/1.0.0/advanced/retry-mechanism) - Explore retry and error handling
+- [Publisher](/docs/basic/publisher) - Learn about publishers
+- [Subscriber](/docs/basic/subscriber) - Learn about subscribers
+- [Dependency Injection](/docs/basic/dependency-injection) - Explore DI patterns

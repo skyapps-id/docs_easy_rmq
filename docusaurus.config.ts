@@ -49,14 +49,17 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/easyrmq/my-docs/tree/main/docs',
+            'https://github.com/skyapps-id/my-docs/tree/main/docs',
           // Versioning configuration
           includeCurrentVersion: true,
           lastVersion: '1.0.0',
           versions: {
             current: {
-              label: '1.0.5 🏗️',
+              label: '1.0.1 🏗️',
               banner: 'unreleased',
+            },
+            '1.0.0': {
+              label: '1.0.0',
             },
             '1.0.0-beta': {
               label: '1.0.0-beta',
@@ -136,15 +139,15 @@ const config: Config = {
           items: [
             {
               label: 'Rust Issues',
-              href: 'https://github.com/easyrmq/easy-rmq-rs/issues',
+              href: 'https://github.com/skyapps-id/easy-rmq-rs/issues',
             },
             {
               label: 'Go Issues',
-              href: 'https://github.com/easyrmq/easy-rmq-go/issues',
+              href: 'https://github.com/skyapps-id/easy-rmq-go/issues',
             },
             {
               label: 'Documentation Issues',
-              href: 'https://github.com/easyrmq/my-docs/issues',
+              href: 'https://github.com/skyapps-id/my-docs/issues',
             },
           ],
         },
@@ -153,11 +156,11 @@ const config: Config = {
           items: [
             {
               label: 'Rust GitHub',
-              href: 'https://github.com/easyrmq/easy-rmq-rs',
+              href: 'https://github.com/skyapps-id/easy-rmq-rs',
             },
             {
               label: 'Go GitHub',
-              href: 'https://github.com/easyrmq/easy-rmq-go',
+              href: 'https://github.com/skyapps-id/easy-rmq-go',
             },
           ],
         },

@@ -428,6 +428,6 @@ async fn test_publish_and_subscribe() {
 
 ## What's Next
 
-- [Publisher Guide](../basic/publisher) - Learn about publishers
-- [Subscriber Guide](../basic/subscriber) - Learn about subscribers
-- [Advanced Features](/docs/1.0.0/advanced/retry-mechanism) - Explore retry and concurrency
+- [Publisher Guide (Rust)](/docs/basic/rust/publisher) - Learn about publishers
+- [Subscriber Guide (Rust)](/docs/basic/rust/subscriber) - Learn about subscribers
+- [Advanced Features (Rust)](/docs/advanced/rust/retry-mechanism) - Explore retry and concurrency

@@ -19,8 +19,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Installation',
+      collapsed: false,
       items: [
-        'installation/index',
         'installation/rust',
         'installation/go',
       ],
@@ -28,11 +28,12 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Basic Features',
+      collapsed: false,
       items: [
-        'basic/index',
         {
           type: 'category',
           label: 'Rust',
+          collapsed: false,
           items: [
             'basic/rust/publisher',
             'basic/rust/subscriber',
@@ -42,6 +43,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Go',
+          collapsed: false,
           items: [
             'basic/go/publisher',
             'basic/go/subscriber',
@@ -52,11 +54,12 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Advanced Features',
+      collapsed: false,
       items: [
-        'advanced/index',
         {
           type: 'category',
           label: 'Rust',
+          collapsed: false,
           items: [
             'advanced/rust/retry-mechanism',
             'advanced/rust/prefetch-control',
@@ -69,6 +72,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Go',
+          collapsed: false,
           items: [
             'advanced/go/retry-mechanism',
             'advanced/go/prefetch-control',
@@ -80,67 +84,8 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    'examples',
   ],
 
-  // Rust documentation sidebar
-  rustSidebar: [
-    {
-      type: 'doc',
-      id: 'rust/intro',
-      label: 'Easy RMQ for Rust',
-    },
-    {
-      type: 'category',
-      label: 'Basic Features',
-      items: [
-        'basic/rust/publisher',
-        'basic/rust/subscriber',
-        'basic/rust/dependency-injection',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Advanced Features',
-      items: [
-        'advanced/rust/retry-mechanism',
-        'advanced/rust/prefetch-control',
-        'advanced/rust/parallel-processing',
-        'advanced/rust/single-active-consumer',
-        'advanced/rust/middleware',
-        'advanced/rust/distributed-tracing',
-      ],
-    },
-  ],
-
-  // Go documentation sidebar
-  goSidebar: [
-    {
-      type: 'doc',
-      id: 'go/intro',
-      label: 'Easy RMQ for Go',
-    },
-    {
-      type: 'category',
-      label: 'Basic Features',
-      items: [
-        'basic/go/publisher',
-        'basic/go/subscriber',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Advanced Features',
-      items: [
-        'advanced/go/retry-mechanism',
-        'advanced/go/prefetch-control',
-        'advanced/go/parallel-processing',
-        'advanced/go/single-active-consumer',
-        'advanced/go/middleware',
-        'advanced/go/distributed-tracing',
-      ],
-    },
-  ],
 };
 
 export default sidebars;
