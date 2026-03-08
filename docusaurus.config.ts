@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Easy RMQ',
   tagline: 'Modern AMQP libraries for Rust and Go with connection pool, publisher, subscriber, and dependency injection support',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -85,7 +85,7 @@ const config: Config = {
       title: 'Easy RMQ',
       logo: {
         alt: 'Easy RMQ Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-icon.svg',
       },
       items: [
         {
@@ -165,7 +165,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Skyapps ID. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Skyapps ID.`,
     },
     prism: {
       theme: prismThemes.github,
