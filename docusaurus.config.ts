@@ -49,7 +49,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/skyapps-id/my-docs/tree/main/docs',
+            'https://github.com/skyapps-id/docs-easy-rmq/tree/main/docs',
           // Versioning configuration
           includeCurrentVersion: true,
           lastVersion: '1.0.0',
@@ -147,7 +147,7 @@ const config: Config = {
             },
             {
               label: 'Documentation Issues',
-              href: 'https://github.com/skyapps-id/my-docs/issues',
+              href: 'https://github.com/skyapps-id/docs-easy-rmq/issues',
             },
           ],
         },
