@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Head from '@docusaurus/Head';
 
 import styles from './index.module.css';
 
@@ -148,8 +149,10 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} - Modern AMQP Libraries for Rust & Go | Messaging Made Simple`}
       description="Easy RMQ provides modern AMQP libraries for Rust and Go with connection pooling, publisher/subscriber patterns, and dependency injection. Build reliable distributed systems with minimal boilerplate code.">
+      <Head>
+        <title>Easy RMQ Modern AMQP Libraries for Rust & Go</title>
+      </Head>
       <div className={styles.mainContainer}>
         <div className={styles.contentWrapper}>
           <HeroSection />
